@@ -3,7 +3,9 @@ from flask_cors import CORS
 import joblib
 
 app = Flask(__name__)
-CORS(app)  # Important!
+
+# ✅ Allow frontend origin (replace with your actual frontend URL)
+CORS(app, origins=["https://your-vercel-project-name.vercel.app"])
 
 model = joblib.load("model.pkl")
 
@@ -21,4 +23,4 @@ def predict():
     return jsonify({"predicted_salary": prediction})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=10000)
+    app.run(host="0.0.0.0", port=10000)
