@@ -9,6 +9,11 @@ CORS(app, origins=["https://frontend-mp46.vercel.app/"])
 
 model = joblib.load("model.pkl")
 
+
+@app.route("/",methods=["GET"])
+def home():
+    return "backend is live!"
+
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.get_json()
