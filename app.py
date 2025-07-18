@@ -5,7 +5,7 @@ import joblib
 app = Flask(__name__)
 
 # ✅ Allow frontend origin (replace with your actual frontend URL)
-CORS(app, origins=["https://frontend-mp46.vercel.app/"])
+CORS(app, origins=["https://frontend-mp46.vercel.app"])
 
 model = joblib.load("model.pkl")
 
