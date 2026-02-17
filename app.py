@@ -4,27 +4,14 @@ import joblib
 import numpy as np
 
 app = Flask(__name__)
-<<<<<<< HEAD
 CORS(app)
-=======
-
-# ✅ Allow frontend origin (replace with your actual frontend URL)
-CORS(app, origins=["https://frontend-mp46.vercel.app"])
->>>>>>> 533300c518fd6105b964075ad534181ca01cdbe6
 
 # Load Model
 model = joblib.load("model.pkl")
 
-<<<<<<< HEAD
 @app.route("/", methods=["GET"])
 def home():
     return "Backend is Live!"
-=======
-
-@app.route("/",methods=["GET"])
-def home():
-    return "backend is live!"
->>>>>>> 533300c518fd6105b964075ad534181ca01cdbe6
 
 @app.route("/predict", methods=["POST"])
 def predict():
